@@ -36,6 +36,15 @@ let boxSize = 30;
 const step = 10;
 // const boxes = [];
 
+refs.input.addEventListener('input', () => {
+  const value = parseInt(refs.input.value, 10);
+  if (isNaN(value) || value < 1) {
+    refs.input.value = 1;
+  } else if (value > 100) {
+    refs.input.value = 100; 
+  }
+});
+
 const createObjects = () => {
   console.log()
   for (let i = 1; i <= refs.input.value; i+=1) {
