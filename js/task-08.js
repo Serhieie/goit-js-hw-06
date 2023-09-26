@@ -20,10 +20,6 @@
 //  Для доступу до елементів форми використовуй властивість elements.
 // Виведи об'єкт із введеними даними в консоль і очисти значення полів форми методом reset.
 
-
-
-
-
 // const form = document.querySelector(".login-form");
 // const formEmail = form.querySelector('[name="email"]');
 // const formPassword = form.querySelector('[name="password"]');
@@ -52,7 +48,6 @@
 //   form.reset()
 // });
 
-
 //Через Елементс
 //Цей Варіант не відправляє форму після аллерту//Цей Варіант не відправляє форму після аллерту//Цей Варіант не відправляє форму після аллерту
 //Цей Варіант не відправляє форму після аллерту//Цей Варіант не відправляє форму після аллерту//Цей Варіант не відправляє форму після аллерту
@@ -61,13 +56,12 @@
 const form = document.querySelector(".login-form");
 
 form.addEventListener("submit", (event) => {
-
-  event.preventDefault(); 
+  event.preventDefault();
 
   const formDataObj = {
     email: event.currentTarget.email.value,
     password: event.currentTarget.password.value,
-  }
+  };
 
   if (!formDataObj.email) {
     return alert("Please fill in the email field. All fields should be filled.");
@@ -76,14 +70,9 @@ form.addEventListener("submit", (event) => {
     return alert("Please fill in the password field. All fields should be filled.");
   }
 
-  const formData = new FormData(event.currentTarget)
+  const formData = new FormData(event.currentTarget);
 
-  formData.forEach((value, name)=>{
-    console.log("Name of field: ", name)
-    console.log("Value: ", value)
-  })
-
-  console.log(formDataObj)
-  form.reset()
+  console.log(formDataObj);
+  form.reset();
   return formData;
-  });
+});

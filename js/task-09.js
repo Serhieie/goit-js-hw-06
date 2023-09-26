@@ -1,5 +1,5 @@
 // Завдання 9
-// Напиши скрипт, який змінює кольори фону елемента <body> через інлайн-стиль по кліку на button.change-color 
+// Напиши скрипт, який змінює кольори фону елемента <body> через інлайн-стиль по кліку на button.change-color
 //і виводить значення кольору в span.color.
 
 /* <div class="widget">
@@ -16,12 +16,11 @@ function getRandomHexColor() {
 }
 
 const changeColorBtn = document.querySelector(".change-color");
-const spanColor =  document.querySelector(".color");
+const spanColor = document.querySelector(".color");
 
 const changeColor = () => {
-  document.body.style.backgroundColor = `${getRandomHexColor()}`
-  spanColor.textContent = `${getRandomHexColor()}`; 
-}
+  document.body.style.backgroundColor = `${getRandomHexColor()}`;
+  spanColor.textContent = `${document.body.style.backgroundColor}`;
+};
 
-changeColorBtn.addEventListener("click", changeColor)
-
+changeColorBtn.addEventListener("click", changeColor);

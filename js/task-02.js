@@ -2,12 +2,10 @@ const ingredients = ["Potatoes", "Mushrooms", "Garlic", "Tomatos", "Herbs", "Con
 
 const list = document.querySelector("#ingredients");
 
-const createListItem = ingredients.map((ingredient) => {
-  const listItem = document.createElement("li");
-  listItem.textContent = ingredient;
-  listItem.classList.add("item");
-  list.appendChild(listItem);
-});
+const createListItem = ingredients
+  .map((ingredient) => `<li class="item">${ingredient}</li>`)
+  .join("");
+list.innerHTML = createListItem;
 
 //Приклад з відеоматеріалу
 // const colorPickerContainerEl = document.querySelector(".js-color-picker");

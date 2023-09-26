@@ -34,7 +34,7 @@ refs.objectInMultiply.style.gap = "5px";
 
 let boxSize = 30;
 const step = 10;
-// const boxes = [];
+const boxes = [];
 
 refs.input.addEventListener("input", () => {
   const value = parseInt(refs.input.value, 10);
@@ -46,18 +46,16 @@ refs.input.addEventListener("input", () => {
 });
 
 const createObjects = () => {
-  console.log();
   for (let i = 1; i <= refs.input.value; i += 1) {
     const box = document.createElement("div");
     box.style.marginTop = `20px`;
     box.style.backgroundColor = getRandomHexColor();
     box.style.width = `${boxSize}px`;
     box.style.height = `${boxSize}px`;
-    // boxes.push(box)
-    console.log(box);
+    boxes.push(box);
     boxSize += step;
-    refs.objectInMultiply.append(box);
   }
+  refs.objectInMultiply.append(...boxes);
 };
 
 const destroyer = () => {
