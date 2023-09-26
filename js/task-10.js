@@ -39,7 +39,7 @@ const boxes = [];
 refs.input.addEventListener("input", () => {
   const value = parseInt(refs.input.value, 10);
   if (isNaN(value) || value < 1) {
-    refs.input.value = 1;
+    refs.input.value = "";
   } else if (value > 100) {
     refs.input.value = 100;
   }
