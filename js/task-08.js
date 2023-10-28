@@ -1,6 +1,8 @@
 const form = document.querySelector(".login-form");
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", onSubmit);
+
+function onSubmit(event) {
   event.preventDefault();
   const { email, password } = event.target.elements;
 
@@ -15,4 +17,4 @@ form.addEventListener("submit", (event) => {
 
   form.reset();
   return formDataObj;
-});
+}
