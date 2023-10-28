@@ -16,21 +16,15 @@ const incrementBtn = document.querySelector('button[data-action="increment"]');
 const valueDisplay = document.querySelector("#value");
 const decrementBtn = document.querySelector('button[data-action="decrement"]');
 
-
-
 const valueDown = () => {
   counterValue -= 1;
   valueDisplay.textContent = counterValue;
-  //   console.log(`Pressed decrement: ${counterValue}`);
 };
 
 const valueUp = () => {
   counterValue += 1;
   valueDisplay.textContent = counterValue;
-  //   console.log(`Pressed increment: ${counterValue}`);
 };
 
 decrementBtn.addEventListener("click", valueDown);
 incrementBtn.addEventListener("click", valueUp);
-
-
